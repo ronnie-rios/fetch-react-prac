@@ -7,10 +7,10 @@ function App() {
   return (
     <Router>
     <div className="App">
-      <Router>
-        <Router path='/' element={<AllPosts />} />
-        <Router path='/' element={<SinglePost />} />
-      </Router>
+      <Routes>
+        <Route path='/' element={<AllPosts />} />
+        <Route path='/:id' element={<SinglePost />} />
+      </Routes>
     </div>
     </Router>
   );
