@@ -6,7 +6,6 @@ export default function AllPosts() {
   const fetchPosts = async () => {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts')
     const data = await response.json()
-    console.log(data);
     setPosts(data)
   }
   useEffect(()=>{
@@ -18,7 +17,7 @@ export default function AllPosts() {
         <h3>view all posts</h3>
         {posts && <div>
             {posts.map((post) => (
-                <div>
+                <div key={post.id}>
                     <h4>Post {post.id}: {post.title}</h4>
                     <Link to={`/${post.id}`}>
                         <button>view post details</button>
